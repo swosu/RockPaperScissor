@@ -1,12 +1,16 @@
 package rockPaperScissorsLizardSpock;
 
+import java.util.Scanner;
+
 public class RockPaperScissorsLizardSpock {
 
 	public static void main(String[] args) {
 		System.out.println("Hello and welcome to RPSLS");
-
-		int user = 5;
-		int computer = 6;
+		Scanner input = new Scanner(System.in);
+		System.out.println(
+				"Please enter your selection: \n1:Rock, 2:Paper, 3:Scissors, 4:Lizard, 5:Spock.");
+		int user = input.nextInt();
+		int computer = (int)(Math.random()*5 + 1);
 
 		if(user == computer) {
 			System.out.println("it was a tie.");
@@ -25,6 +29,7 @@ public class RockPaperScissorsLizardSpock {
 			}
 		}
 		System.out.println("So long and thanks for all the fish!");
+		input.close();
 	}
 
 	private static void userPicksRock(int computer) {
@@ -55,7 +60,7 @@ public class RockPaperScissorsLizardSpock {
 			System.out.println("Potato loses.");
 		}
 	}
-	
+
 	private static void userPicksPaper(int computer) {
 		System.out.println("User: Paper");
 		switch(computer) {
@@ -84,7 +89,7 @@ public class RockPaperScissorsLizardSpock {
 			System.out.println("Potato loses.");
 		}
 	}
-	
+
 	private static void userPicksScissors(int computer) {
 		System.out.println("User: Scissors");
 		switch(computer) {
@@ -142,7 +147,7 @@ public class RockPaperScissorsLizardSpock {
 			System.out.println("Potato loses.");
 		}	
 	}
-	
+
 	private static void userPicksSpock(int computer) {
 		System.out.println("User: Spock");
 		switch(computer) {
@@ -170,6 +175,6 @@ public class RockPaperScissorsLizardSpock {
 			System.out.println("Computer: Potato");
 			System.out.println("Potato loses.");
 		}	
-		
+
 	}
 }
