@@ -1,18 +1,17 @@
 package simpleRockPaperScissors;
 
+import java.util.Scanner;
+
 public class IfRockPaperScissor {
 
 	public static void main(String[] args) {
-		System.out.println("Hello.");
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter your choice: 1: Rock,  2: Paper, or 3: Scissors");
 		
-		// 1: Rock
-		// 2: Paper
-		// 3: Scissors
-		// 4: Potato
-		int user = 5;
+		int user = input.nextInt();
 		
-		// computer chooses 1: Rock
-		int computer = 3;
+		int computer = (int)(Math.random()*3+1);
+		System.out.println("Computer selected: " + computer);
 		
 		if(user == computer) {
 			System.out.println("We had a tie.");
@@ -46,6 +45,7 @@ public class IfRockPaperScissor {
 		}
 		
 		System.out.println("Bye.");
+		input.close();
 	}
 
 }
